@@ -73,7 +73,7 @@ export default function RootLayout() {
   if (error || seedError) {
     return (
       <View style={styles.loadingContainer}>
-        <Text style={{ color: Colors.textColors.text }}>
+        <Text style={{ color: Colors.text.primary }}>
           Erro ao preparar o banco de dados: {(error ?? seedError)?.message}
         </Text>
       </View>
@@ -99,7 +99,7 @@ export default function RootLayout() {
 const styles = StyleSheet.create({
   body: {
     backgroundColor: Colors.background,
-    color: Colors.textColors.text,
+    color: Colors.text.primary,
   },
   loadingContainer: {
     flex: 1,

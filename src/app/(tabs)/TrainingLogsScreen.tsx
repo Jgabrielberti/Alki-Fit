@@ -8,11 +8,12 @@ import { Colors } from "@/src/constants/theme";
 import { useRouter } from "expo-router";
 import { StartEmptyTrainingLog } from "@/src/components/training/StartEmptyTrainingLog";
 import { ExistingWorkoutPlans } from "@/src/components/training/ExistingWorkoutPlans";
+import { AppBackground } from "@/src/components/generic/AppBackground";
 
 export default function TrainingLogsScreen() {
 
   return (
-    <View style={styles.container}>
+    <AppBackground colors={[Colors.training.primaryDark2, "#031d18", "#010e0b"]}>
       <ScrollView
         contentContainerStyle={styles.scrollContent}
         style={styles.scrollView}
@@ -24,16 +25,11 @@ export default function TrainingLogsScreen() {
           <StartEmptyTrainingLog />
         </View>
       </ScrollView>
-    </View>
+    </AppBackground>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: Colors.background,
-
-  },
   scrollView: {
     flex: 1,
   },
@@ -45,7 +41,7 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   existingWorkoutPlansContainer: {
-    marginTop: 60,
+    marginTop: 70,
     width: "100%",
   },
 });

@@ -1,11 +1,10 @@
 import { AppBackground } from "@/src/components/generic/AppBackground";
-import { AuthBackground } from "@/src/components/auth/AuthBackground";
 import { AuthRegisterForm } from "@/src/components/auth/AuthRegisterForm";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 export default function RegisterScreen() {
   return (
-    <AppBackground>
+    <AppBackground colors={["#460011", "#2c000b", "#180006"]}>
       <KeyboardAwareScrollView
         enableOnAndroid
         keyboardShouldPersistTaps="handled"
@@ -17,9 +16,9 @@ export default function RegisterScreen() {
           padding: 20,
         }}
       >
-        <AuthBackground>
-          <AuthRegisterForm />
-        </AuthBackground>
+  
+        <AuthRegisterForm />
+      
       </KeyboardAwareScrollView>
     </AppBackground>
   );

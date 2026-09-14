@@ -186,7 +186,7 @@ export function ExistingWorkoutPlans() {
         <Pressable hitSlop={15} onPress={handleCreateFolder}>
           <Ionicons
             name="add-sharp"
-            color={Colors.training.primary}
+            color={Colors.training.secondary}
             size={40}
           />
         </Pressable>
@@ -287,12 +287,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
 
-    backgroundColor: "rgba(255, 255, 255, 0.04)", 
+    backgroundColor: "transparent", 
     overflow: "hidden",
-    
-    borderWidth: 1,
-    borderColor: "rgba(255, 255, 255, 0.12)",
-    borderRadius: 32,
 
     marginHorizontal: 12,
     marginBottom: 32,
@@ -304,14 +300,13 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     
-    marginTop: 16,
-    marginBottom: 12,
+    marginVertical: 10,
     paddingHorizontal: 20,
   },
   title: {
     fontSize: 32,
     fontWeight: "bold",
-    color: Colors.textColors.text,
+    color: Colors.text.primary,
   },
   loader: {
     marginTop: 40,
@@ -332,12 +327,12 @@ const styles = StyleSheet.create({
     paddingVertical: 16,
   },
   emptyText: {
-    color: Colors.textColors.textSecondary,
+    color: Colors.text.secondary,
     fontSize: 16,
     textAlign: "center",
   },
   emptyFolderText: {
-    color: Colors.textColors.textSecondary,
+    color: Colors.text.secondary,
     fontSize: 14,
     alignSelf: "center",
   },

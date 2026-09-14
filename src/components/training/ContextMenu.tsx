@@ -51,7 +51,7 @@ export function ContextMenu({ visible, x, y, onClose, items }: Props) {
                   color={
                     item.danger
                       ? Colors.systemStateColors.danger
-                      : Colors.textColors.text
+                      : Colors.text.primary
                   }
                 />
 
@@ -110,6 +110,6 @@ const styles = StyleSheet.create({
 
   text: {
     fontSize: 16,
-    color: Colors.textColors.text,
+    color: Colors.text.primary,
   },
 });

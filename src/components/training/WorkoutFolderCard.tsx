@@ -1,4 +1,5 @@
 import { View, Pressable, Text, StyleSheet } from "react-native";
+import { BlurView } from "expo-blur";
 import { useRef } from "react";
 import { Ionicons } from "@expo/vector-icons";
 import { Colors } from "@/src/constants/theme";
@@ -32,12 +33,12 @@ export function WorkoutFolderCard({
   const menuTriggerRef = useRef<View>(null);
 
   return (
-    <View style={styles.folderCard}>
+    <BlurView intensity={100} tint="systemMaterialDark" style={styles.folderCard}>
       <Pressable style={styles.folderHeader} onPress={onToggleExpand}>
         <Ionicons
           name={isExpanded ? "chevron-down" : "chevron-forward"}
           size={20}
-          color={Colors.textColors.textSecondary}
+          color={Colors.text.secondary}
         />
 
         <View style={styles.folderTitleContainer}>
@@ -64,7 +65,7 @@ export function WorkoutFolderCard({
             <Ionicons
               name="ellipsis-vertical"
               size={20}
-              color={Colors.textColors.textSecondary}
+              color={Colors.text.secondary}
             />
           </Pressable>
 
@@ -93,27 +94,28 @@ export function WorkoutFolderCard({
             <Ionicons
               name="add-circle-outline"
               size={26}
-              color={Colors.training.primary}
+              color={Colors.training.secondary}
             />
           </Pressable>
         </View>
       </Pressable>
 
       {isExpanded && <View style={styles.folderBody}>{children}</View>}
-    </View>
+    </BlurView>
   );
 }
 
 const styles = StyleSheet.create({
   folderCard: {
     flex: 1,
-    backgroundColor: "rgba(255, 255, 255, 0.03)",
     
     borderWidth: 1,
     borderColor: "rgba(255, 255, 255, 0.08)",
-    borderRadius: 20,
+    borderRadius: 16,
     
-    marginVertical: 16,
+    marginVertical: 8,
+
+    overflow: "hidden",
   },
   folderHeader: {
     flexDirection: "row",
@@ -127,12 +129,12 @@ const styles = StyleSheet.create({
   folderName: {
     fontSize: 17,
     fontWeight: "600",
-    color: Colors.textColors.text,
+    color: Colors.text.primary,
   },
   folderDescription: {
     width: "100%",
     fontSize: 13,
-    color: Colors.textColors.textMuted,
+    color: Colors.text.muted,
     marginTop: 2,
   },
   folderActions: {

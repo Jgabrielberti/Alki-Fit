@@ -1,5 +1,6 @@
 import { StyleSheet, Text, Pressable, View } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
 import { Colors } from "@/src/constants/theme";
 
@@ -24,7 +25,7 @@ export type MealsCardsProps = {
 };
 
 export default function MealsCards({ onRegisterMeal }: MealsCardsProps) {
-  const handleRegister = (mealType: MealType) => {
+  const handleRegisterMeal = (mealType: MealType) => {
     if (onRegisterMeal) {
       onRegisterMeal(mealType);
       return;
@@ -39,16 +40,20 @@ export default function MealsCards({ onRegisterMeal }: MealsCardsProps) {
         <View key={meal.key} style={styles.card}>
           <View style={styles.mealInfo}>
             <View style={styles.iconContainer}>
-              <MaterialCommunityIcons name={meal.icon} size={26} color={Colors.nutrition.primaryDark} />
+              <MaterialCommunityIcons name={meal.icon} size={26} color={Colors.nutrition.secondary} />
             </View>
             <Text style={styles.mealTitle}>{meal.title}</Text>
           </View>
 
           <Pressable
-            style={styles.registerButton}
-            onPress={() => handleRegister(meal.key)}
+            style={styles.mealsButton}
+            onPress={() => handleRegisterMeal(meal.key)}
           >
-            <Text style={styles.registerText}>Registre</Text>
+            <Ionicons 
+              name={"chevron-forward"}
+              size={24}
+              color={Colors.nutrition.secondary}
+            />
           </Pressable>
         </View>
       ))}
@@ -60,13 +65,13 @@ const styles = StyleSheet.create({
   wrapper: {
     width: "100%",
     backgroundColor: "transparent",
-    gap: 6,
+    gap: 10,
   },
   card: {
     minHeight: 72,
     width: "100%",
-    backgroundColor: "#202020",
-    borderRadius: 16,
+    backgroundColor: "#222222",
+    borderRadius: 10,
     paddingHorizontal: 14,
     paddingVertical: 12,
     flexDirection: "row",
@@ -90,23 +95,17 @@ const styles = StyleSheet.create({
   },
   mealTitle: {
     flexShrink: 1,
-    color: Colors.textColors.text,
+    color: Colors.text.primary,
     fontSize: 15,
     fontWeight: "600",
   },
-  registerButton: {
+  mealsButton: {
     minWidth: 72,
     paddingHorizontal: 14,
     paddingVertical: 9,
     borderRadius: 10,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: Colors.nutrition.primary,
-    color: Colors.textColors.text,
-  },
-  registerText: {
-    color: Colors.textColors.text,
-    fontSize: 13,
-    fontWeight: "700",
+    
   },
 });

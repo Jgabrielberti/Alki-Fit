@@ -43,7 +43,7 @@ export function FolderFormModal({
           <TextInput
             style={styles.input}
             placeholder="Nome"
-            placeholderTextColor={Colors.textColors.textMuted}
+            placeholderTextColor={Colors.text.muted}
             value={name}
             onChangeText={setName}
           />
@@ -51,7 +51,7 @@ export function FolderFormModal({
           <TextInput
             style={[styles.input, styles.textArea]}
             placeholder="Descrição (opcional)"
-            placeholderTextColor={Colors.textColors.textMuted}
+            placeholderTextColor={Colors.text.muted}
             value={description}
             onChangeText={setDescription}
             multiline
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 18,
     fontWeight: "bold",
-    color: Colors.textColors.text,
+    color: Colors.text.primary,
     marginBottom: 4,
   },
   input: {
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
     borderColor: "rgba(255,255,255,0.1)",
     borderRadius: 12,
     padding: 12,
-    color: Colors.textColors.text,
+    color: Colors.text.primary,
   },
   textArea: {
     minHeight: 70,
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
     marginTop: 8,
   },
   cancelButton: { padding: 10 },
-  cancelText: { color: Colors.textColors.textSecondary },
+  cancelText: { color: Colors.text.secondary },
   confirmButton: {
     backgroundColor: Colors.training.primary,
     paddingHorizontal: 18,

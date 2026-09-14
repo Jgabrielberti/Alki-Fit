@@ -25,7 +25,7 @@ export function AuthRegisterForm() {
 
   const { loading, registerUser } = useContext(AuthContext);
 
-  // Apaga letras caso o usuário digite alguma e adiciona barras depois de dois números, e outra depois de 4 números, 
+  // Apaga letras caso o usuário digite alguma e adiciona barras depois de dois números, e outra depois de 4 números,
   // para ficar no formato DD/MM/AAAA
   const handlebirth_dateChange = (text: string) => {
     let cleaned = text.replace(/[^0-9]/g, "");
@@ -35,13 +35,18 @@ export function AuthRegisterForm() {
     } else if (cleaned.length > 4) {
       cleaned = `${cleaned.slice(0, 2)}/${cleaned.slice(2, 4)}/${cleaned.slice(4, 8)}`;
     }
-    
+
     setbirth_date(cleaned);
   };
 
-
   const handleRegisterSubmit = async () => {
-    if (!username || !weight || !height || birth_date.length !== 10 || !gender) {
+    if (
+      !username ||
+      !weight ||
+      !height ||
+      birth_date.length !== 10 ||
+      !gender
+    ) {
       Alert.alert("Erro", "Por favor, preencha todos os campos corretamente.");
       return;
     }
@@ -65,25 +70,23 @@ export function AuthRegisterForm() {
   };
 
   return (
-    <BlurView intensity={40} tint="dark" style={styles.glass_container}>
+    <BlurView intensity={75} tint="systemMaterialDark" style={styles.container}>
       <View style={styles.components}>
         <Text style={styles.title}>Seja bem vindo!</Text>
 
-        <Text style={styles.subtitle}>
-          Configure suas informações iniciais
-        </Text>
+        <Text style={styles.subtitle}>Configure suas informações iniciais</Text>
 
         <View style={styles.inputContainer}>
           <Ionicons
             name="person-outline"
             size={20}
-            color={Colors.training.primaryDark1}
+            color={Colors.status.complementary}
           />
 
           <TextInput
             style={styles.input}
             placeholder="Nome de usuário"
-            placeholderTextColor={Colors.textColors.textSecondary}
+            placeholderTextColor={Colors.text.secondary}
             value={username}
             onChangeText={setUsername}
           />
@@ -93,13 +96,13 @@ export function AuthRegisterForm() {
           <Ionicons
             name="barbell-outline"
             size={20}
-            color={Colors.training.primaryDark1}
+            color={Colors.status.complementary}
           />
 
           <TextInput
             style={styles.input}
             placeholder="Peso (kg)"
-            placeholderTextColor={Colors.textColors.textSecondary}
+            placeholderTextColor={Colors.text.secondary}
             value={weight}
             onChangeText={setWeight}
             keyboardType="numeric"
@@ -110,13 +113,13 @@ export function AuthRegisterForm() {
           <Ionicons
             name="resize-outline"
             size={20}
-            color={Colors.training.primaryDark1}
+            color={Colors.status.complementary}
           />
 
           <TextInput
             style={styles.input}
             placeholder="Altura (cm)"
-            placeholderTextColor={Colors.textColors.textSecondary}
+            placeholderTextColor={Colors.text.secondary}
             value={height}
             onChangeText={setHeight}
             keyboardType="numeric"
@@ -127,13 +130,13 @@ export function AuthRegisterForm() {
           <Ionicons
             name="calendar-outline"
             size={20}
-            color={Colors.training.primaryDark1}
+            color={Colors.status.complementary}
           />
 
           <TextInput
             style={styles.input}
             placeholder="Data de Nascimento"
-            placeholderTextColor={Colors.textColors.textSecondary}
+            placeholderTextColor={Colors.text.secondary}
             value={birth_date}
             onChangeText={handlebirth_dateChange}
             keyboardType="numeric"
@@ -143,34 +146,39 @@ export function AuthRegisterForm() {
 
         <View style={styles.genderContainer}>
           <Pressable
-            style={[
-              styles.genderButton,
-              gender === "male" && styles.genderButtonSelected, 
-            ]}
+            style={ gender == "male" ? styles.maleButton : styles.genderButton}
             onPress={() => setGender("male")}
           >
             <Ionicons
               name="male-outline"
               size={50}
-              color={gender === "male" ? Colors.training.primary : Colors.textColors.textMuted}
+              color={
+                gender === "male"
+                  ? Colors.status.complementary
+                  : Colors.text.secondary
+              }
             />
           </Pressable>
           <Pressable
-            style={[
-              styles.genderButton,
-              gender === "female" && styles.genderButtonSelected,
-            ]}
+            style={gender == "female" ? styles.femaleButton : styles.genderButton}
             onPress={() => setGender("female")}
           >
             <Ionicons
               name="female-outline"
               size={50}
-              color={gender === "female" ? Colors.training.primary : Colors.textColors.textMuted}
+              color={
+                gender === "female"
+                  ? Colors.status.complementary
+                  : Colors.text.secondary
+              }
             />
           </Pressable>
         </View>
 
-        <Text style={styles.info}>* Todas as informações podem ser alteradas e servem apenas para cálculos metabólicos dentro do aplicativo.</Text>
+        <Text style={styles.info}>
+          * Todas as informações podem ser alteradas e servem apenas para
+          cálculos metabólicos dentro do aplicativo.
+        </Text>
 
         <View style={styles.buttonContainer}>
           <Pressable
@@ -179,7 +187,7 @@ export function AuthRegisterForm() {
             disabled={loading}
           >
             {loading ? (
-              <ActivityIndicator size="small" color={Colors.training.primary} />
+              <ActivityIndicator size="small" color={Colors.status.complementary} />
             ) : (
               <Text style={styles.buttonText}>Cadastrar</Text>
             )}
@@ -191,14 +199,14 @@ export function AuthRegisterForm() {
 }
 
 const styles = StyleSheet.create({
-  glass_container: {
+  container: {
     width: "90%",
     maxWidth: 420,
     borderRadius: 32,
     overflow: "hidden",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "rgba(255, 255, 255, 0.04)", 
+    backgroundColor: "rgba(255, 255, 255, 0.04)",
     borderWidth: 1,
     borderColor: "rgba(255, 255, 255, 0.12)",
   },
@@ -216,15 +224,15 @@ const styles = StyleSheet.create({
     height: 60,
     paddingHorizontal: 16,
     marginBottom: 14,
-    backgroundColor: "rgba(255, 255, 255, 0.06)",
+    backgroundColor: Colors.background,
     borderRadius: 16,
     borderWidth: 1,
-    borderColor: Colors.training.primary,
+    borderColor: "rgba(255,255,255,0.10)",
   },
   input: {
     flex: 1,
     marginLeft: 12,
-    color: Colors.textColors.text,
+    color: Colors.status.complementary,
     fontSize: 16,
   },
   buttonContainer: {
@@ -232,7 +240,7 @@ const styles = StyleSheet.create({
     height: "auto",
   },
   button: {
-    backgroundColor: Colors.training.primaryDark1,
+    backgroundColor: Colors.status.complementary,
     width: "100%",
     height: 50,
     borderRadius: 16,
@@ -244,24 +252,24 @@ const styles = StyleSheet.create({
     opacity: 0.6,
   },
   buttonText: {
-    color: Colors.textColors.text,
+    color: Colors.text.black,
     fontSize: 16,
     fontWeight: "bold",
   },
   title: {
-    color: Colors.textColors.text,
+    color: Colors.text.primary,
     fontSize: 28,
     fontWeight: "700",
     textAlign: "center",
   },
   subtitle: {
-    color: Colors.textColors.textSecondary,
+    color: Colors.text.secondary,
     textAlign: "center",
     marginTop: 10,
     marginBottom: 24,
   },
   info: {
-    color: Colors.textColors.textMuted,
+    color: Colors.text.muted,
     fontSize: 12,
     marginVertical: 5,
   },
@@ -273,17 +281,42 @@ const styles = StyleSheet.create({
     marginBottom: 14,
     gap: 25,
   },
+  maleButton: {
+    flex: 1,
+    backgroundColor: Colors.status.secondary,
+    
+    justifyContent: "center",
+    alignItems: "center",
+    
+    borderWidth: 1,
+    borderColor: Colors.status.complementary,
+    borderRadius: 24,
+    overflow: "hidden",
+    
+  },
+  femaleButton: {
+    flex: 1,
+    backgroundColor: Colors.status.primary,
+    
+    justifyContent: "center",
+    alignItems: "center",
+    
+    borderWidth: 1,
+    borderColor: Colors.status.complementary,
+    borderRadius: 24,
+    overflow: "hidden",
+  },
   genderButton: {
     flex: 1,
-    backgroundColor: "rgba(255, 255, 255, 0.06)",
+    backgroundColor: Colors.background,
     justifyContent: "center",
     alignItems: "center",
     borderWidth: 1,
-    borderBottomWidth: 5,
-    borderColor: Colors.textColors.textMuted,
+    borderColor: "rgba(255,255,255,0.10)",
     borderRadius: 24,
+    overflow: "hidden",
   },
   genderButtonSelected: {
-    borderColor: Colors.training.primary,
-  }
+    borderColor: Colors.status.complementary,
+  },
 });

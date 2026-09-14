@@ -1,11 +1,10 @@
-import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { AppBackground } from "@/src/components/generic/AppBackground";
-import { AuthLoginForm } from "@/src/components/auth/AuthLoginForm";
+import { AuthRegisterForm } from "@/src/components/auth/AuthRegisterForm";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
-export default function LoginScreen() {
+export default function RegisterPreviewScreen() {
   return (
     <AppBackground
-      image={require("@/assets/backgroundImage1.jpeg")}
       colors={[
         "#2D0B1E",
         "#57122C",
@@ -26,7 +25,7 @@ export default function LoginScreen() {
           padding: 20,
         }}
       >
-        <AuthLoginForm />
+        <AuthRegisterForm />
       </KeyboardAwareScrollView>
     </AppBackground>
   );

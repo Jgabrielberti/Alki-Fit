@@ -1,4 +1,4 @@
-import { StyleSheet, View, Pressable, Text, Image } from "react-native";
+import { StyleSheet, View, Pressable, Text } from "react-native";
 import { useRouter } from "expo-router";
 import { Colors } from "@/src/constants/theme";
 
@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginHorizontal: 24,
+    marginBottom: 32,
   },
   header: {
     width: "100%",
@@ -47,14 +48,14 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(255, 255, 255, 0.04)",
     borderWidth: 1,
     borderBottomWidth: 5,
-    borderColor: Colors.training.primary,
+    borderColor: Colors.training.secondary,
     
     paddingVertical: 20,
     marginTop: 10,
   },
   buttonText: {
     fontSize: 24,
-    color: Colors.textColors.text,
+    color: Colors.text.primary,
     fontWeight: "bold",
   },
   title: {

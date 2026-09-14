@@ -89,10 +89,10 @@ export function PopupMenu({ visible, onClose, anchorRef, items, menuWidth = 180 
                     size={18}
                     color={
                       item.disabled
-                        ? Colors.textColors.textMuted
+                        ? Colors.text.muted
                         : item.danger
                         ? Colors.systemStateColors.danger
-                        : Colors.textColors.text
+                        : Colors.text.primary
                     }
                   />
                 )}
@@ -101,7 +101,7 @@ export function PopupMenu({ visible, onClose, anchorRef, items, menuWidth = 180 
                   style={[
                     styles.text,
                     item.danger && !item.disabled && { color: Colors.systemStateColors.danger },
-                    item.disabled && { color: Colors.textColors.textMuted },
+                    item.disabled && { color: Colors.text.muted },
                   ]}
                 >
                   {item.label}
@@ -156,7 +156,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 16,
-    color: Colors.textColors.text,
+    color: Colors.text.primary,
     flex: 1,
   },
   checkmark: {

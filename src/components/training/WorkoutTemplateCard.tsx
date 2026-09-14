@@ -1,4 +1,5 @@
 import { View, Pressable, Text, StyleSheet } from "react-native";
+import { BlurView } from "expo-blur";
 import { useRef } from "react";
 import { Ionicons } from "@expo/vector-icons";
 import { Colors } from "@/src/constants/theme";
@@ -51,7 +52,7 @@ export function WorkoutTemplateCard({
             <Ionicons
               name="ellipsis-vertical"
               size={20}
-              color={Colors.textColors.textSecondary}
+              color={Colors.text.secondary}
             />
           </Pressable>
         </View>
@@ -107,10 +108,10 @@ export function WorkoutTemplateCard({
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: "rgba(255, 255, 255, 0.04)",
+    backgroundColor: Colors.background,
     borderWidth: 1,
     borderColor: "rgba(255, 255, 255, 0.08)",
-    borderRadius: 24,
+    borderRadius: 18,
     padding: 20,
     marginBottom: 16,
   },
@@ -135,7 +136,7 @@ const styles = StyleSheet.create({
     position: "relative",
   },
   iniciarButton: {
-    backgroundColor: Colors.training.primary,
+    backgroundColor: Colors.training.primaryLight,
     paddingHorizontal: 16,
     paddingVertical: 8,
     borderRadius: 12,
@@ -143,7 +144,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   iniciarButtonText: {
-    color: Colors.training.primaryDark2,
+    color: Colors.text.black,
     fontWeight: "bold",
     fontSize: 14,
   },
@@ -152,17 +153,17 @@ const styles = StyleSheet.create({
   },
   optionText: {
     fontSize: 16,
-    color: Colors.textColors.text,
+    color: Colors.text.primary,
   },
   cardTitle: {
     fontSize: 16,
     fontWeight: "bold",
-    color: Colors.textColors.text,
+    color: Colors.text.primary,
     marginBottom: 4,
   },
   cardSubtitle: {
     fontSize: 14,
-    color: Colors.textColors.textSecondary,
+    color: Colors.text.secondary,
   },
   descriptionContainer: {
     width: "100%",
@@ -174,7 +175,7 @@ const styles = StyleSheet.create({
     flex: 1,
     fontSize: 14,
     width: "100%",
-    color: Colors.textColors.textMuted,
+    color: Colors.text.muted,
     fontStyle: "italic",
   },
   exerciseList: {
@@ -188,24 +189,24 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     borderRadius: 20,
-    backgroundColor: "rgba(255, 255, 255, 0.06)",
+    backgroundColor: "rgba(255, 255, 255, 0.1)",
     justifyContent: "center",
     alignItems: "center",
     marginRight: 12,
   },
   exerciseName: {
     fontSize: 16,
-    color: Colors.textColors.text,
+    color: Colors.text.primary,
     fontWeight: "500",
   },
   exerciseSets: {
     fontSize: 13,
-    color: Colors.textColors.textMuted,
+    color: Colors.text.muted,
     marginTop: 2,
   },
   moreText: {
     fontSize: 14,
-    color: Colors.textColors.textSecondary,
+    color: Colors.text.secondary,
     marginTop: 8,
     fontWeight: "500",
   },

@@ -49,12 +49,12 @@ const styles = StyleSheet.create({
     gap: 7,
   },
   dayLabel: {
-    color: Colors.textColors.textMuted,
+    color: Colors.text.muted,
     fontSize: 16,
     fontWeight: "600",
   },
   dayLabelToday: {
-    color: Colors.textColors.text,
+    color: Colors.text.primary,
     fontWeight: "700",
   },
   dayCircle: {
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     borderRadius: 7,
     backgroundColor: "transparent",
     borderWidth: 1.5,
-    borderColor: Colors.textColors.textMuted,
+    borderColor: Colors.text.muted,
   },
   dayCircleToday: {
     width: 18,

@@ -194,14 +194,14 @@ export default function TrainingStructuredNotesScreen() {
           <TextInput
             style={styles.title}
             placeholder="Título do Treino"
-            placeholderTextColor={Colors.textColors.textSecondary}
+            placeholderTextColor={Colors.text.secondary}
             value={title}
             onChangeText={setTitle}
           />
           <TextInput
             style={styles.description}
             placeholder="Descrição (opcional)"
-            placeholderTextColor={Colors.textColors.textSecondary}
+            placeholderTextColor={Colors.text.secondary}
             value={description}
             onChangeText={setDescription}
             multiline
@@ -260,7 +260,7 @@ export default function TrainingStructuredNotesScreen() {
                   style={[styles.inputCell, styles.colInput]}
                   keyboardType="numeric"
                   placeholder="-"
-                  placeholderTextColor={Colors.textColors.textMuted}
+                  placeholderTextColor={Colors.text.muted}
                   value={set.weight}
                   onChangeText={(val) =>
                     handleUpdateSet(exercise.uiId, set.id, "weight", val)
@@ -270,7 +270,7 @@ export default function TrainingStructuredNotesScreen() {
                   style={[styles.inputCell, styles.colInput]}
                   keyboardType="numeric"
                   placeholder="-"
-                  placeholderTextColor={Colors.textColors.textMuted}
+                  placeholderTextColor={Colors.text.muted}
                   value={set.reps}
                   onChangeText={(val) =>
                     handleUpdateSet(exercise.uiId, set.id, "reps", val)
@@ -280,7 +280,7 @@ export default function TrainingStructuredNotesScreen() {
                   style={[styles.inputCell, styles.colInput]}
                   keyboardType="numeric"
                   placeholder="-"
-                  placeholderTextColor={Colors.textColors.textMuted}
+                  placeholderTextColor={Colors.text.muted}
                   value={set.rir}
                   onChangeText={(val) =>
                     handleUpdateSet(exercise.uiId, set.id, "rir", val)
@@ -293,7 +293,7 @@ export default function TrainingStructuredNotesScreen() {
               style={styles.addSetButton}
               onPress={() => handleAddSet(exercise.uiId)}
             >
-              <Ionicons name="add" size={18} color={Colors.textColors.text} />
+              <Ionicons name="add" size={18} color={Colors.text.primary} />
               <Text style={styles.addSetText}>Adicionar Série</Text>
             </Pressable>
           </View>
@@ -356,11 +356,11 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 28,
     fontWeight: "bold",
-    color: Colors.textColors.text,
+    color: Colors.text.primary,
   },
   description: {
     fontSize: 16,
-    color: Colors.textColors.textSecondary,
+    color: Colors.text.secondary,
     minHeight: 40,
   },
   exercisesContainer: {
@@ -400,7 +400,7 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   tableHeaderText: {
-    color: Colors.textColors.textSecondary,
+    color: Colors.text.secondary,
     fontSize: 14,
     fontWeight: "bold",
     textAlign: "center",
@@ -419,14 +419,14 @@ const styles = StyleSheet.create({
     marginHorizontal: 4,
   },
   setNumber: {
-    color: Colors.textColors.text,
+    color: Colors.text.primary,
     fontSize: 16,
     fontWeight: "bold",
   },
   inputCell: {
     backgroundColor: "rgba(255, 255, 255, 0.08)",
     borderRadius: 8,
-    color: Colors.textColors.text,
+    color: Colors.text.primary,
     textAlign: "center",
     paddingVertical: 8,
     fontSize: 16,
@@ -442,7 +442,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
   },
   addSetText: {
-    color: Colors.textColors.text,
+    color: Colors.text.primary,
     marginLeft: 6,
     fontSize: 14,
     fontWeight: "600",
@@ -480,7 +480,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 80,
   },
   saveButtonText: {
-    color: Colors.textColors.blackText,
+    color: Colors.text.black,
     fontSize: 18,
     fontWeight: "bold",
   },

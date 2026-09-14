@@ -59,17 +59,17 @@ export function SinglePicker({
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.button} onPress={() => setVisible(true)}>
-        {iconName && <Ionicons name={iconName} size={20} color={Colors.textColors.textMuted} />}
+        {iconName && <Ionicons name={iconName} size={20} color={Colors.text.muted} />}
         <Text 
           style={[
             styles.buttonText, 
-            (!selectedValue || selectedValue === "") && { color: Colors.textColors.textMuted }
+            (!selectedValue || selectedValue === "") && { color: Colors.text.muted }
           ]} 
           numberOfLines={1}
         >
           {getButtonText()}
         </Text>
-        <Ionicons name="chevron-down-outline" size={18} color={Colors.textColors.textMuted} style={styles.arrowIcon} />
+        <Ionicons name="chevron-down-outline" size={18} color={Colors.text.muted} style={styles.arrowIcon} />
       </TouchableOpacity>
 
       <Modal
@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
   },
   buttonText: { 
     flex: 1,
-    color: Colors.textColors.text, 
+    color: Colors.text.primary, 
     fontSize: 18,
     marginLeft: 12,
   },
@@ -177,10 +177,10 @@ const styles = StyleSheet.create({
   headerTitle: { 
     fontSize: 18, 
     fontWeight: "700", 
-    color: Colors.textColors.text 
+    color: Colors.text.primary 
   },
   closeButton: { 
-    color: Colors.textColors.textSecondary, 
+    color: Colors.text.secondary, 
     fontSize: 16,
   },
   item: {
@@ -197,7 +197,7 @@ const styles = StyleSheet.create({
   },
   itemText: { 
     fontSize: 16, 
-    color: Colors.textColors.text,  
+    color: Colors.text.primary,  
   },
   itemTextSelected: { 
     color: Colors.training.primary, 

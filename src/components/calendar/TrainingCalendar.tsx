@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
   calendarTitle: {
     fontSize: 28,
     fontWeight: "700",
-    color: Colors.textColors.text,
+    color: Colors.text.primary,
     textAlign: "center",
     marginVertical: 12,
   },
@@ -192,7 +192,7 @@ const styles = StyleSheet.create({
     borderColor: "rgba(255, 255, 255, 0.12)",
   },
   dayText: {
-    color: Colors.textColors.text,
+    color: Colors.text.primary,
     fontSize: 18,
   },
   today: {

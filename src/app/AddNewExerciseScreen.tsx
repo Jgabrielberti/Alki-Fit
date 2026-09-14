@@ -95,7 +95,7 @@ export default function AddNewExerciseScreen() {
               <TextInput
                 style={styles.textInput}
                 placeholder="Ex: Supino Reto com Halteres"
-                placeholderTextColor={Colors.textColors.textMuted}
+                placeholderTextColor={Colors.text.muted}
                 value={exerciseName}
                 onChangeText={setExerciseName}
               />
@@ -153,7 +153,7 @@ export default function AddNewExerciseScreen() {
             <TextInput
               style={[styles.textInput, styles.textArea]}
               placeholder="Dicas de execução, cadência, etc."
-              placeholderTextColor={Colors.textColors.textMuted}
+              placeholderTextColor={Colors.text.muted}
               value={description}
               onChangeText={setDescription}
               multiline
@@ -194,7 +194,7 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   title: {
-    color: Colors.textColors.text,
+    color: Colors.text.primary,
     fontSize: 28,
     fontWeight: "bold",
     
@@ -239,7 +239,7 @@ const styles = StyleSheet.create({
   },
   textInput: {
     flex: 1,
-    color: Colors.textColors.text,
+    color: Colors.text.primary,
     fontSize: 18,
   },
   textArea: {
@@ -267,7 +267,7 @@ const styles = StyleSheet.create({
     opacity: 0.6,
   },
   saveButtonText: {
-    color: Colors.textColors.blackText,
+    color: Colors.text.black,
     fontSize: 18,
     fontWeight: "bold",
   },

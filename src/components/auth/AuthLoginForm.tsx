@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import {
   View,
   Text,
@@ -12,14 +12,14 @@ import { Ionicons } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 
 import { AuthContext } from "@/src/services/AuthContext";
-import { Colors, greenPalette } from "@/src/constants/theme";
+import { Colors, winePetrol } from "@/src/constants/theme";
 
 export function AuthLoginForm() {
   const router = useRouter();
   const { loading, performBiometricLogin } = useContext(AuthContext);
 
   return (
-    <BlurView intensity={40} tint="dark" style={styles.glass_container}>
+    <View style={styles.container}>
       <View style={styles.components}>
         <View style={styles.containerTitle}>
           <Text style={styles.title}>Bem vindo de volta!</Text>
@@ -39,7 +39,7 @@ export function AuthLoginForm() {
               ]}
             >
               <LinearGradient
-                colors={greenPalette}
+                colors={winePetrol}
                 start={{ x: 0, y: 0 }}
                 end={{ x: 1, y: 1 }}
                 style={styles.fingerprintRing}
@@ -53,7 +53,7 @@ export function AuthLoginForm() {
                 <Ionicons
                   name="finger-print"
                   size={90}
-                  color={Colors.training.primaryDark1}
+                  color={Colors.text.secondary}
                 />
               </BlurView>
             </Pressable>
@@ -62,7 +62,7 @@ export function AuthLoginForm() {
           {loading ? (
             <ActivityIndicator
               size="large"
-              color={Colors.training.primaryDark1}
+              color={Colors.status.complementary}
               style={styles.loader}
             />
           ) : (
@@ -93,22 +93,22 @@ export function AuthLoginForm() {
           </Pressable>
         </View>
       </View>
-    </BlurView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  glass_container: {
+  container: {
     width: "90%",
     maxWidth: 420,
-    minHeight: 400,
+
     borderRadius: 32,
     overflow: "hidden",
 
     justifyContent: "flex-start",
     alignItems: "center",
 
-    backgroundColor: "rgba(255, 255, 255, 0.04)",
+    backgroundColor: Colors.background,
     borderWidth: 1,
     borderColor: "rgba(255, 255, 255, 0.12)",
   },
@@ -142,14 +142,14 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    color: Colors.textColors.text,
+    color: Colors.status.complementary,
     fontSize: 28,
     fontWeight: "700",
     textAlign: "center",
   },
 
   subtitle: {
-    color: Colors.textColors.textSecondary,
+    color: Colors.text.secondary,
     textAlign: "center",
     marginTop: 10,
     marginBottom: 24,
@@ -195,7 +195,7 @@ const styles = StyleSheet.create({
   fingerprintPressed: {
     opacity: 0.8,
     transform: [{ scale: 0.96 }],
-    color: Colors.training.primary,
+    color: Colors.status.complementary,
   },
 
   button: {
@@ -211,7 +211,7 @@ const styles = StyleSheet.create({
     opacity: 0.5,
   },
   buttonText: {
-    color: Colors.training.primary,
+    color: Colors.status.complementary,
     fontSize: 16,
     fontWeight: "bold",
   },
@@ -221,7 +221,7 @@ const styles = StyleSheet.create({
     marginBottom: 35,
   },
   noAccountText: {
-    color: Colors.training.primaryDark1,
+    color: Colors.profile.primary,
     fontSize: 14,
     fontWeight: "600",
     textAlign: "center",

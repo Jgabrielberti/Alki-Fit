@@ -7,14 +7,14 @@ import { Colors } from "@/src/constants/theme";
 
 
 export default function TabLayout() {
-  const inactiveColor = Colors.textColors.textSecondary;
+  const inactiveColor = Colors.text.secondary;
   
   return (
     <Tabs
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: Colors.textColors.text,
-        tabBarInactiveTintColor: Colors.textColors.textSecondary,
+        tabBarActiveTintColor: Colors.text.primary,
+        tabBarInactiveTintColor: Colors.text.secondary,
         tabBarStyle: {
           paddingTop: 6,
           backgroundColor: Colors.background,
@@ -30,7 +30,7 @@ export default function TabLayout() {
         options={{
           title: "",
           tabBarIcon: ({ focused }) => (
-            <Ionicons name="library-outline" size={28} color={focused? Colors.training.secondary: inactiveColor} />
+            <Ionicons name="library-outline" size={28} color={focused? Colors.status.primary: inactiveColor} />
           ),
         }}
       />
@@ -75,7 +75,7 @@ export default function TabLayout() {
         options={{
           title: "",
           tabBarIcon: ({ focused }) => (
-            <Ionicons name="person" size={28} color={focused? Colors.profile.primary: inactiveColor} />
+            <Ionicons name="person" size={28} color={focused? Colors.status.secondary: inactiveColor} />
           ),
         }}
       />

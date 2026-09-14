@@ -64,17 +64,17 @@ export function ExerciseSearchModal({
               <Ionicons name="add" size={26} color={Colors.training.primary} />
             </TouchableOpacity>
             <TouchableOpacity onPress={handleClose} style={styles.closeButton}>
-              <Ionicons name="close" size={24} color={Colors.textColors.text} />
+              <Ionicons name="close" size={24} color={Colors.text.primary} />
             </TouchableOpacity>
             </View>
           </View>
 
           <View style={styles.searchContainer}>
-            <Ionicons name="search" size={20} color={Colors.textColors.textMuted} />
+            <Ionicons name="search" size={20} color={Colors.text.muted} />
             <TextInput
               style={styles.searchInput}
               placeholder="Buscar exercício..."
-              placeholderTextColor={Colors.textColors.textMuted}
+              placeholderTextColor={Colors.text.muted}
               value={searchQuery}
               onChangeText={setSearchQuery}
             />
@@ -134,7 +134,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: "bold",
-    color: Colors.textColors.text,
+    color: Colors.text.primary,
   },
   closeButton: {
     padding: 4,
@@ -151,7 +151,7 @@ const styles = StyleSheet.create({
   searchInput: {
     flex: 1,
     marginLeft: 10,
-    color: Colors.textColors.text,
+    color: Colors.text.primary,
     fontSize: 16,
   },
   listContent: {
@@ -167,10 +167,10 @@ const styles = StyleSheet.create({
   },
   exerciseName: {
     fontSize: 16,
-    color: Colors.textColors.text,
+    color: Colors.text.primary,
   },
   emptyText: {
-    color: Colors.textColors.textMuted,
+    color: Colors.text.muted,
     textAlign: "center",
     marginTop: 20,
     fontSize: 14,

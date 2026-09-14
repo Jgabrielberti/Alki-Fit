@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { StyleSheet, View, Pressable, Text, ScrollView } from "react-native";
 import { useRouter } from "expo-router";
 import { Colors } from "@/src/constants/theme";
+import { AppBackground } from "@/src/components/generic/AppBackground";
 import { WorkoutRepository } from "@/src/repositories/WorkoutRepository";
 import { TrainingCalendar } from "@/src/components/calendar/TrainingCalendar";
 import { TrainingLogsMonthlyStats } from "@/src/components/calendar/TrainingLogsMonthlyStats";
@@ -29,30 +30,29 @@ export default function StatusScreen() {
       };
   
     return (
-      <View style={styles.container}>
-            <ScrollView
-              contentContainerStyle={styles.scrollContent}
-              style={styles.scrollView}
-            >
-              <TrainingCalendar
-                trainingDays={trainingDays}
-                onDayPress={handleDayPress}
-              />
-      
-              <TrainingLogsMonthlyStats
-                date={selectedDate}
-              />
-      
-            </ScrollView>
-          </View>
+      <AppBackground colors={["#460011", "#2c000b", "#180006"]}>
+        <ScrollView
+          contentContainerStyle={styles.scrollContent}
+          style={styles.scrollView}
+        >{/*
+          <TrainingCalendar
+            trainingDays={trainingDays}
+            onDayPress={handleDayPress}
+          />
+  
+          <TrainingLogsMonthlyStats
+            date={selectedDate}
+          />
+        */}
+        <Pressable onPress={() => {router.push("/RegisterPreviewScreen")}} style={styles.devButton}>
+          <Text style={styles.devButtonText}>Tela de Registro</Text>
+        </Pressable>
+        </ScrollView>
+      </AppBackground>
     );
   }
   
   const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: Colors.background,
-    },
     scrollView: {
       flex: 1,
     },
@@ -67,7 +67,19 @@ export default function StatusScreen() {
     },
     dateText: {
       fontSize: 16,
-      color: Colors.textColors.textSecondary,
+      color: Colors.text.secondary,
+    },
+    devButton: {
+      backgroundColor: Colors.background,
+      padding: 12,
+      height: 50,
+      justifyContent: "center",
+      alignItems: "center",
+      marginTop: 60,
+    },
+    devButtonText: {
+      color: Colors.status.secondary,
+      fontSize: 14,
     },
   });
   
