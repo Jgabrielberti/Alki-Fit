@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "gymnasia",
+    "name": "Alki Fit",
     "slug": "gymnasia",
     "scheme": "gymnasia",
     "version": "1.0.0",
@@ -25,7 +25,9 @@
     },
     "plugins": [
       "expo-router",
-      "expo-sqlite"
+      "expo-sqlite",
+      "expo-font",
+      "expo-status-bar"
     ],
     "extra": {
       "router": {},

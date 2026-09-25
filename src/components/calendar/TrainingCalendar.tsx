@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
   },
   calendarIcon: {
     position: "absolute",
-    color: Colors.training.middle,
+    color: Colors.training.secondary,
     left: 10,
   },
   calendarTitle: {
@@ -163,7 +163,7 @@ const styles = StyleSheet.create({
   },
   weekDay: {
     textAlign: "center",
-    color: Colors.training.middle,
+    color: Colors.training.secondary,
     fontWeight: "700",
     fontSize: 16,
   },
@@ -213,7 +213,7 @@ const styles = StyleSheet.create({
   normalContainer: {},
   underlineContainer: {
     borderBottomWidth: 2,
-    borderBottomColor: Colors.training.middle,
+    borderBottomColor: Colors.training.secondary,
     paddingBottom: 1,
   },
   subtitlesContainer:{
@@ -223,6 +223,6 @@ const styles = StyleSheet.create({
   },
   subtitles: {
     fontSize: 10,
-    color: Colors.training.middle,
+    color: Colors.training.secondary,
   },
 });

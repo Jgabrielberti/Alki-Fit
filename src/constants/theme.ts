@@ -19,7 +19,9 @@ export const Colors = {
 
   status: {
     primary: "#800020",
+    primaryLight: "#ca0033",
     secondary: "#215a60",
+    secondaryLight: "#399faa",
     complementary: "#f3e5ab",
   },
 

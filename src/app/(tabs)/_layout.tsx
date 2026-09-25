@@ -4,33 +4,26 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 
 import { Colors } from "@/src/constants/theme";
-
+import GlassTabBar from "@/src/components/navigation/GlassTabBar";
 
 export default function TabLayout() {
   const inactiveColor = Colors.text.secondary;
-  
+
   return (
     <Tabs
+      tabBar={(props) => <GlassTabBar {...props} />}
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: Colors.text.primary,
-        tabBarInactiveTintColor: Colors.text.secondary,
-        tabBarStyle: {
-          paddingTop: 6,
-          backgroundColor: Colors.background,
-          borderTopWidth: 1, 
-          borderTopColor: "rgba(255, 255, 255, 0.08)",
-          elevation: 0,
-        },
-        tabBarBackground: () => null,
+        tabBarInactiveTintColor: inactiveColor,
       }}
     >
       <Tabs.Screen
         name="index"
         options={{
           title: "",
-          tabBarIcon: ({ focused }) => (
-            <Ionicons name="library-outline" size={28} color={focused? Colors.status.primary: inactiveColor} />
+          tabBarActiveTintColor: Colors.status.primaryLight,
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="library-outline" size={28} color={color} />
           ),
         }}
       />
@@ -39,23 +32,20 @@ export default function TabLayout() {
         name="TrainingLogsScreen"
         options={{
           title: "",
-          tabBarIcon: ({ focused }) => (
-            <MaterialCommunityIcons
-              name="dumbbell"
-              size={28}
-              color={focused? Colors.training.primary: inactiveColor}
-            />
+          tabBarActiveTintColor: Colors.training.primary,
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="dumbbell" size={28} color={color} />
           ),
         }}
       />
-
 
       <Tabs.Screen
         name="NutritionScreen"
         options={{
           title: "",
-          tabBarIcon: ({ focused }) => (
-            <Ionicons name="leaf" size={28} color={focused? Colors.nutrition.primary: inactiveColor} />
+          tabBarActiveTintColor: Colors.nutrition.primary,
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="leaf" size={28} color={color} />
           ),
         }}
       />
@@ -64,8 +54,9 @@ export default function TabLayout() {
         name="SocialScreen"
         options={{
           title: "",
-          tabBarIcon: ({ focused }) => (
-            <Ionicons name="chatbubbles-outline" size={28} color={focused? Colors.social.primary: inactiveColor} />
+          tabBarActiveTintColor: Colors.social.primary,
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="chatbubbles-outline" size={28} color={color} />
           ),
         }}
       />
@@ -74,8 +65,9 @@ export default function TabLayout() {
         name="ProfileScreen"
         options={{
           title: "",
-          tabBarIcon: ({ focused }) => (
-            <Ionicons name="person" size={28} color={focused? Colors.status.secondary: inactiveColor} />
+          tabBarActiveTintColor: Colors.status.secondaryLight,
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="person" size={28} color={color} />
           ),
         }}
       />
